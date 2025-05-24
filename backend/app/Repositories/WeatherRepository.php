@@ -7,9 +7,9 @@ use GuzzleHttp\Client;
 
 class WeatherRepository implements WeatherRepositoryInterface
 {   
-    const API_KEY = 'c51d061f86891a4f4fc0c3f26d61bade';
-    const API_KEY_TWO = '20571ab45c74dc2a1897b60c5b8047a1';
-    const API_KEY_FOURSQUARE = 'fsq3lXAxp4pP4ixPfv+5OrZ1ULEZxJn7odiGqQ4+xHgzqSA=';
+    private const API_KEY_WEATHER = 'c51d061f86891a4f4fc0c3f26d61bade';
+    private const API_KEY_FORECAST = '20571ab45c74dc2a1897b60c5b8047a1';
+    private const API_KEY_FOURSQUARE = 'fsq3lXAxp4pP4ixPfv+5OrZ1ULEZxJn7odiGqQ4+xHgzqSA=';
 
     /**
      * @var \GuzzleHttp\Client
@@ -32,7 +32,7 @@ class WeatherRepository implements WeatherRepositoryInterface
         $url = sprintf(
             'https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&appid=%s',
             strtolower($city),
-            self::API_KEY
+            self::API_KEY_WEATHER
         );
 
         try {
@@ -52,7 +52,7 @@ class WeatherRepository implements WeatherRepositoryInterface
         $url = sprintf(
             'https://api.openweathermap.org/data/2.5/forecast/daily?q=%s&units=metric&appid=%s',
             $city,
-            self::API_KEY_TWO
+            self::API_KEY_FORECAST
         );
 
         try {
@@ -72,7 +72,7 @@ class WeatherRepository implements WeatherRepositoryInterface
         $url = sprintf(
             'https://api.foursquare.com/v3/places/search?categories=16000&near=%s&limit=6',
             strtolower($city),
-            self::API_KEY_TWO
+            self::API_KEY_FORECAST
         );
 
         try {
