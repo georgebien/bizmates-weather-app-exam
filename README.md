@@ -34,6 +34,9 @@ It demonstrates best practices in both UI/UX design and code structure to ensure
 - Laravel tests use PHPUnit and Faker for data simulation.
 - Service and controller logic is unit-tested for reliability and maintainability.
 
+NOTE:
+I only added tests for only one method
+
 ---
 
 ## 🔗 Tech Stack
